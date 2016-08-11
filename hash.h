@@ -53,11 +53,11 @@ public:
 	{
 		for(size_t i=0;i<_table.size();++i)
 		{
-			HashTableNode<k,v>* cur = _table[i];//_table[i]ÖØÃüÃûÎªcur
+			HashTableNode<k,v>* cur = _table[i];//_table[i]é‡å‘½åä¸ºcur
 			while(cur)
 			{
 				HashTableNode<k,v>* del = cur;
-				cur = cur->_next ;     //Ã¿´ÎÊ¹curÎªËüµÄÏÂÒ»¸ö
+				cur = cur->_next ;     //æ¯æ¬¡ä½¿curä¸ºå®ƒçš„ä¸‹ä¸€ä¸ª
 				delete del;
 			}
 			_table[i] = NULL;
@@ -77,7 +77,7 @@ public:
 			}
 		}
 	}
-	//¸³Öµ
+	//èµ‹å€¼æ“ä½œ
 	HashTable<k,v>  &operator = ( HashTable<k,v>& ht )
 	{
 		if(this != &ht)
@@ -212,7 +212,7 @@ protected:
 				{
 					HashTableNode<k,v>* tmp = cur;
 					cur = cur->_next;
-					//ÔÚĞÂ±íÖĞÏàÓ¦µÄÎ»ÖÃ£¬Í·²å
+					//åœ¨æ–°è¡¨ä¸­ç›¸åº”çš„ä½ç½®ï¼Œå¤´æ’
 					size_t index = _HashFunc(tmp->_key ,nextPrime);
 					nextTable[index] = tmp;
 				}
